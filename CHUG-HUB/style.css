@@ -1,28 +1,19 @@
 :root{
     --ff-orange: #f68925
 }
-body{
-    background-color: var(--ff-orange);
-}
 
 
-.header{
+
+.header-sec{
     background: white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
-
-.navbar-list{
-    list-style: none;
-    display: flex;
-    flex-wrap:wrap ;
     justify-content: center;
-    align-items: center;
-
 }
+
+
+
+
 
 .logo{
     border-radius: 50%;
