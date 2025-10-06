@@ -9,19 +9,13 @@ navToggleBtn.addEventListener("click", function () {
 
 
 function pal (arm){
-  let str = arm .toString();
-  let lth =str.length;
+  let str = arm.toSring();
+  let lth =arm.length;
   let res=0;
-  for (i=0;i<lth;i++){
-    res+=(str[i])**lth;
-    
+  for (i=0;i<=lth;i++){
+    res+=Number(str[i])**lth;
 
-  } if (arm===res) {
-    console.log("number is armstong");return res
-  }else{
-    return -1
+  } if  {
+    arm===str
   }
 }
-
-let userInput = prompt("enter a number:");
-console.log(pal(Number(userInput)));
