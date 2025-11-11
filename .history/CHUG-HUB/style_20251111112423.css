@@ -1,0 +1,22 @@
+:root{
+    --ff-orange: #f68925;
+    --ff-cream : #f1d5bafa;
+}
+
+.header_class{
+    display: flex;
+    
+    align-items: center;
+    background-color:var(--ff-cream) ;
+}
+
+ .header-sec{
+     display: flex; 
+     flex-wrap: wrap;
+     align-items:center;
+     justify-content: space-evenly;
+} 
+
+.navbar_{
+    display: flex;
+}

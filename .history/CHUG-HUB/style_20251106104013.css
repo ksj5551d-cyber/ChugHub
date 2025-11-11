@@ -1,0 +1,29 @@
+:root{
+    --ff-orange: #f68925
+}
+
+
+
+.header-sec{
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+
+.logo{
+    border-radius: 50%;
+}
+
+.add_to_cart{
+    background:none;
+    background-size: 10px;
+    
+}
+.add_to_cart_logo{
+    image-zi
+}

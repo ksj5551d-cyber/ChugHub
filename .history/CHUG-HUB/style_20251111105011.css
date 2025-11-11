@@ -1,0 +1,13 @@
+:root{
+    --ff-orange: #f68925
+}
+
+.header_class{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.header-sec{
+    display: flex;
+}

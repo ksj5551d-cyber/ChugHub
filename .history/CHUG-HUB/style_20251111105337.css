@@ -1,0 +1,15 @@
+:root{
+    --ff-orange: #f68925;
+    --ff-cream : #f5be8b;
+}
+
+.header_class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var() ;
+}
+
+/* .header-sec{
+    display: flex;
+} */

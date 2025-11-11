@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Real-time Clock (setInterval)</title>
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --accent: #7dd3fc;
+      --muted: #94a3b8;
+    }
+
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071024 0%, #0b1220 60%);
+      color: #e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      box-sizing:border-box;
+    }
+
+    .clock-card{
+      background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border-radius:14px;
+      padding:28px 36px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      text-align:center;
+      min-width:260px;
+      transform: translateY(0);
+      transition: transform .18s ease;
+    }
+    .clock-card:hover{ transform: translateY(-6px); }
+
+    #time {
+      font-size: clamp(30px, 6vw, 56px);
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      display:flex;
+      align-items:baseline;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:6px;
+    }
+
+    .seconds {
+      font-size: 0.45em;
+      opacity:0.9;
+      padding:4px 8px;
+      border-radius:6px;
+      background: linear-gradient(180deg, rgba(125,211,252,0.06), rgba(125,211,252,0.02));
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    #ampm {
+      font-size: 0.36em;
+      color: var(--muted);
+      margin-left:6px;
+    }
+
+    #date {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top:6px;
+    }
+
+    .small-hint{
+      margin-top:12px;
+      font-size:0.82rem;
+      color: #8ea0b7;
+    }
+
+    /* small responsive spacing */
+    @media (max-width:380px){
+      .clock-card{ padding:18px; }
+      #time{ gap:8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="clock-card" role="group" aria-labelledby="time" aria-live="polite">
+      <div id="time" aria-hidden="true">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="minutes">00</span>
+        <span class="seconds" id="seconds">00</span>
+        <span id="ampm">AM</span>
+      </div>
+      <div id="date" aria-hidden="true">Loading date...</div>
+      <div class="small-hint">Real-time clock — updates every second</div>
+    </div>
+  </div>
+
+  <script>
+    // Wait for DOM ready
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   const elHours = document.getElementById('hours');
+    //   const elMinutes = document.getElementById('minutes');
+    //   const elSeconds = document.getElementById('seconds');
+    //   const elAmPm = document.getElementById('ampm');
+    //   const elDate = document.getElementById('date');
+
+    //   // Helper: add leading zero
+    //   function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    //   // Main update function
+    //   function updateClock() {
+    //     const now = new Date();
+
+    //     let hours = now.getHours(); // 0-23
+    //     const minutes = now.getMinutes();
+    //     const seconds = now.getSeconds();
+
+    //     // AM/PM and 12-hour conversion
+    //     const ampm = hours >= 12 ? 'PM' : 'AM';
+    //     hours = hours % 12;
+    //     hours = hours === 0 ? 12 : hours; // convert 0 -> 12
+
+    //     // Write to DOM (fast, minimal DOM writes)
+    //     elHours.textContent = pad(hours);
+    //     elMinutes.textContent = pad(minutes);
+    //     elSeconds.textContent = pad(seconds);
+    //     elAmPm.textContent = ampm;
+
+    //     // Format date like: Friday, Nov 7, 2025
+    //     const options = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
+    //     elDate.textContent = now.toLocaleDateString(undefined, options);
+    //   }
+
+    //   // First call immediately so there is no 1-second blank
+    //   updateClock();
+
+    //   // Update every 1000ms (1 second)
+    //   setInterval(updateClock, 1000);
+    // });
+    let date = new Date();
+    console.log();
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+:root{
+    --ff-orange: #f68925
+}
+
+
+
+.header_class{
+    background-color: var(--ff-orange);
+    display:flex;
+    justify-content: space-around;
+    
+    
+    
+
+}
+
+.header-sec{
+    background: var(--ff-orange);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+.logo{
+    border-radius: 50%;
+}
+
+.shopping_logo{
+    height: 20px;
+    width: 20px;
+    
+}
+.add_to_cart_logo{
+    border-image-slice: 10%;
+}

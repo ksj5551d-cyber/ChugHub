@@ -1,0 +1,26 @@
+:root{
+    --ff-orange: #f68925;
+    --ff-cream : #f1d5bafa;
+}
+
+.header_class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--ff-cream) ;
+
+}
+
+ .header-sec{
+     display: flex; 
+     flex-wrap: wrap;
+     align-items:center;
+     justify-content: space-evenly;
+     gap: 50;
+} 
+
+.navbar-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
