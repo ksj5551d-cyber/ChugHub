@@ -1,10 +1,19 @@
-const navToggleBtn = document.querySelector("[data-nav-toggle-btn]");
-const header = document.querySelector("[data-header]");
+const menuBtn = document.querySelector(".menu-btn");
+const navbar = document.querySelector(".navbar");
 
-navToggleBtn.addEventListener("click", function () {
-  this.classList.toggle("active");
-  header.classList.toggle("active");
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("active");
+  navbar.classList.toggle("active");
 });
+
+// Close menu when clicking a link
+document.querySelectorAll(".navbar-link").forEach(link => {
+  link.addEventListener("click", () => {
+    menuBtn.classList.remove("active");
+    navbar.classList.remove("active");
+  });
+});
+
 
 
 

@@ -1,37 +1,400 @@
-:root{
+ :root{
     --ff-orange: #f68925;
-    --ff-cream : #f1d5bafa;
-}
+    --ff-cream : #f1d5bab9;
+    --ff-creamlight : #ffe6cfce;
+    --ff-beige:#e8dbcf;
+    --ff-orangedark: #f38552;
 
-.header_class{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:var(--ff-cream) ;
-    position: inherit;
-
-}
-.logo-div{
-    border-radius: 50%;
-    height: 40%;
-    width: auto;
-    justify-content:center;
-}
-
- .header-sec{
-     display: flex; 
-     flex-wrap: wrap;
-     align-items:center;
-     justify-content: space-evenly;
-     gap: 120px;
+    /* fonts */
+    --ff-font1: "Bebas Neue",sans-serif;
+    --ff-font2:"Sirivennela", sans-serif;
+    --ff-font3: "Cookie";
+    --ff-font4:"Quintessential", serif;
 } 
 
-.navbar-list{
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    gap: 30px;
+
+
+/* -----------------------------
+   Global Styles
+--------------------------------*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
+
+body{
+  background: #f6f6f6;
+  color: #222;
+}
+
+/* -----------------------------
+   Header Section
+--------------------------------*/
+.header_class{
+  width: 100%;
+  background:var(--ff-cream);
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-sec{
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* -----------------------------
+   NAVBAR 
+--------------------------------*/
+.navbar-list{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.navbar-link{
+  text-decoration: none;
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-link:hover{
+  color:var(--ff-orange);
+}
+
+/* Button Style */
+.btn{
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-secondary{
+  background: var(--ff-cream);
+  color: black;
+}
+
+.btn-secondary:hover{
+  background: #e7d56a;
+}
+
+/* -----------------------------
+   LOGO 
+--------------------------------*/
+.logo-div{
+  text-align: center;
+  flex: 1;
+}
+
 .logo{
-    border-radius: 50%;
+  max-width: 180px;
+  border-radius:50%;
+}
+
+/* -----------------------------
+  CART & LOGIN ICONS 
+--------------------------------*/
+.shopping_logo,
+.login_logo{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add_to_cart_logo{
+  width: 35px;
+  height: 35px;
+  transition: 0.3s ease;
+}
+
+.add_to_cart_logo:hover{
+  transform: scale(1.1);
+}
+
+/* -----------------------------
+   BANNER SECTION 
+--------------------------------*/
+/* Banner Container */
+.banner-text{
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Banner Image */
+.bannerimg{
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(0.65);
+}
+
+/* Centered Main Heading */
+.head1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 800;
+  text-shadow: 2px 3px 10px rgba(0,0,0,0.6);
+  text-align: center;
+  font-family: var(--ff-font1);
+  width: 100%;
+}
+
+/* Subtitle Below Center */
+.subtittle{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f0f0f0;
+  font-size: 40px;
+  font-weight: 400;
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+  text-align: center;
+  font-family: var(--ff-font2);
+  width: 80%;
+}
+
+/* -------------------------
+   HAMBURGER MENU BUTTON
+--------------------------*/
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.menu-btn .bar {
+  width: 30px;
+  height: 4px;
+  background: #000;
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+/* X Animation */
+.menu-btn.active .bar:nth-child(1){
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-btn.active .bar:nth-child(2){
+  opacity: 0;
+}
+
+.menu-btn.active .bar:nth-child(3){
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* -------------------------
+   MOBILE NAV MENU
+--------------------------*/
+@media (max-width: 768px){
+
+  .menu-btn{
+    display: flex;
+  }
+
+  .navbar{
+    position: fixed;
+    top: 112.1px;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: var(--ff-creamlight);
+    padding-top: 100px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: 0.4s ease;
+  }
+
+  .navbar.active{
+    right: 0;
+  }
+
+  .navbar-list{
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+
+}
+
+/* -------------------------
+--ALL DIFF TYPE OF LIQUIDS--
+---------------------------- */
+
+/* BANNER */
+
+.headline{
+  position:relative;
+  align-items:center;
+  justify-content: center;
+  
+}
+
+/* headline */
+
+
+.welcomeline{
+  background-color: var(--ff-beige);
+  color:var(--ff-orange);
+  font-family: var(--ff-font4);
+  font-size: 50px;
+  font-weight: 750;
+  padding-left: 35%;
+  padding-top:100px;
+}
+
+.tagline{
+  background-color: var(--ff-beige);
+  color:var(--ff-orangedark);
+  font-family: var(--ff-font2);
+  font-size: 30px;
+  font-weight: 750;
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 25px;
+  padding-bottom: 10%;
+  
+}
+
+
+/* Outer container */
+.allbooze {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background:var(--ff-beige); /* same beige background */
+}
+
+/* Grid layout */
+.winelink {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  width: 90%;
+  max-width: 1300px;
+}
+
+/* Individual card box */
+.winelink a {
+  background: transparent;
+  border: 2px solid #d6b34c;    /* soft gold border */
+  border-radius: 25px;
+  padding: 25px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: .35s ease;
+  text-decoration: none;
+  color: #2b2b2b;
+  display: block;
+}
+
+/* Smooth hover effect */
+.winelink a:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Image styling */
+.wine-banner {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+/* Title */
+.wine-tittle {
+  font-family: var(--ff-font1);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #3a2c1f;        /* dark brown premium tone */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Explore link */
+.seemore {
+  font-family: var(--ff-font2);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3a2c1f;
+  text-decoration: underline;
+  transition: .3s ease;
+}
+
+.winelink a:hover .seemore {
+  color: #a8832c;        /* gold hover */
+}
+
+
+/* -----------------------------
+   RESPONSIVE DESIGN
+--------------------------------*/
+
+/* Tablets */
+@media(max-width: 900px){
+  .navbar-list{
+     gap: 15px;
+  }
+
+  .head1{
+     font-size: 45px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 600px){
+  .header-sec{
+    gap: 15px;
+  }
+
+  .navbar-list{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bannerimg{
+    height: 50vh;
+  }
+
+  .head1{
+    font-size: 35px;
+  }
+  
+  .subtittle{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #f0f0f0;
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+  text-align: center;
+  font-family: var(--ff-font2);
+  width: 80%;
+  }
 }
